@@ -29,7 +29,7 @@ google_analytics_tracking_id: UA-41937157-1
 #
 markdown: rdiscount
 pygments: true
-permalink: /archive/:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/
 rdiscount:
   extensions: [smart]
 paginate: 5
