@@ -36,44 +36,6 @@ paginate: 5
 paginate_path: "page/:num"
 category_dir: categories
 
-#
-# Blog Settings
-#
-author: Paolo Nicodemo
-description: CodeBits
-url: http://bjornej.github.io
-title: CodeBits
-gravatar_url: http://www.gravatar.com/avatar/80363ea7488055df04432424f52d7dc8.png
-subscribe_rss: http://feeds.feedburner.com/Codebits
-
-# Github repositories
-github_user: bjornej
-github_repo_url: https://github.com/bjornej/
-
-# Twitter
-twitter_user: PaoloNicodemo
-twitter_tweet_button: true
-
-# Disqus Comments
-disqus_short_name: bjornej
-disqus_show_comment_count: false
-
-# Google Analytics
-google_analytics_tracking_id: UA-41937157-1
-
-
-#
-# Jekyll Settings
-#
-markdown: rdiscount
-pygments: true
-permalink: /archive/:year/:month/:day/:title/
-rdiscount:
-  extensions: [smart]
-paginate: 5
-paginate_path: "page/:num"
-category_dir: categories
-
 #prose
 prose:
   rooturl: "_posts"
