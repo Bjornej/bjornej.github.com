@@ -10,6 +10,7 @@ categories:
 As you've noted this blog had a redesign due to the migration from Octopress to plain Jekyll. I've had the idea to do this based on Phil Haack's [article](http://haacked.com/archive/2013/12/02/dr-jekyll-and-mr-haack/) and a little ( a lot  ) help from his and Zach Holman [repository](https://github.com/holman/left) and I must admit it was a success.
 
 What are the pros of Jekyll against Octopress? Well :
+
 - you can post from a browser with prose.io without needing to build the site on your computer
 - the site is easier to understand and modify
 
