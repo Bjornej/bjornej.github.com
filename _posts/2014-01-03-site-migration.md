@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Site migration
 comments: true
 categories: 
@@ -17,10 +17,7 @@ The fact that you don't need a local installation and everything can be done fro
 
 There are also some cons but I believe they are minor in respect to the pros but to be honest I'll list them
 
-- Github pages doesn't allow plugins as it compiles the site with the ---safe switch but this is not usually a problem
-- some features like category pages and tags pages are missing but thy could be built
+- Github pages doesn't allow plugins as it compiles the site with the ---safe switch  ( but this is not usually a problem )
+- some features like category pages and tags pages are missing but they could be built
 
 All considered I consider this as a success and having the possibility to work from the browser should incite me to blog a little more.
-
-
-
