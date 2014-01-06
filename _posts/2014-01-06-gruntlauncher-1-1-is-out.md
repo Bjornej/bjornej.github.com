@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: GruntLauncher 1.1 is out
 comments: true
 categories: 
