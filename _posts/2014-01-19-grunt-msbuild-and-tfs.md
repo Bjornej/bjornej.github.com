@@ -40,3 +40,7 @@ There are to solutions to this problem:
 
 - wait until node is updated on the build servers
 - commit the node modules you depend on in TFS ( I don't recommend this solution as it can cause problems with the number of files to save)
+
+#### Where can I get it 
+
+You can download it from the [Github repository](https://github.com/Bjornej/Grunt.MsBuild) or install them trough Nuget
