@@ -21,5 +21,11 @@ This new release brings a lot of improvements:
  
  - support for executing bower update on all your packages or on a specific package when right-clicking on it ( again thanks to Mads Kristensen )
  ![](/images/bowerall.png)
+ ![](/images/bower.png)
  
  - support for gulpfile parsing in the same way it is done with gruntfiles (I've began to use gulp and support for it was easy to add )
+ ![](/images/gulp.png)
+ 
+With these new functionalities I believe I will have to change the plugin name to something more significant but it will take me some time to come up with a decent name.
+ 
+ 
