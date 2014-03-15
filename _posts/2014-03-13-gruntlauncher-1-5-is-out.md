@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: GruntLauncher 1.5 is out
 comments: true
 categories: 
@@ -27,5 +27,3 @@ This new release brings a lot of improvements:
  ![](/images/gulp.png)
  
 With these new functionalities I believe I will have to change the plugin name to something more significant but it will take me some time to come up with a decent name.
- 
- 
