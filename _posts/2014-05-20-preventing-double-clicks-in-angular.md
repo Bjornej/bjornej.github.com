@@ -9,16 +9,12 @@ categories:
   - javascript
 ---
 
-Last week I was working on a new project and decided to use angular  instead of Backbone, to learn how it works beyond the simple examples.
+Last week I was working on a SPA made with Angular and I was incurring in a classic problem: the double click.
 
-After the first  the first iteratoion was complete we proceeded to test the site and found a classic bug: the double click.
+You know the sistuation: a button is clicked, a call is made to the server to create a new order and after the call finishes the form closes. In my case if ou were fast you could click a couple of times on the button before the call finished resulting in multiple calls and multiple orders.
 
-You know the problem: when a button is clicked a call is made to the server to do something like create a new order or modify the details of something but if the acction is done two times with the same parameters it can return an error or even worse create two objects.
+To solve this problem once and for all I decided to try mi hand at creating a custom directive. Looking in the source code I searched for the **ng-click** directive and modified it to create [**ng-single-click**](https://github.com/Bjornej/angular-single-click).
 
-After a little thinking I decided that angular directives could help me solve the problem in a simple way so after some digging I created angular-single-click.
+This directive can be used by simply substituting ng-click with ng-single-click. If the invoked expression returns something similar to a Promise (meaning it has a finally function) it will automatically ignore all the clicks on the element between the start of the promise and its fulfillment or rejection.
 
-This directive allows you to use it like ng-click but if the invoked expression returns something similar to a Promise (meaning it has a finally function) it will automatically ignore all the clicks on the elemnet done between the start of the promise and its fulfillment or rejection.
-
-If you want to try it you can download the github repo with the sample.
-
-PS: After some test I noticed that stopping clicks without giving the user a hint that work is currently being done is not a good user experience so I created a second version of this directive that adapts ladda-button to show a working animation in the clicked button.
+PS: After some test I noticed that stopping clicks without giving the user a hint that work is currently being done is not a good user experience so I created a [second](https://github.com/Bjornej/angular-animated-click) version of this directive that adapts [ladda-button](http://lab.hakim.se/ladda/) to show a working animation in the clicked button.
