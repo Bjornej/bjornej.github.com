@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Extracting a list of grunt and gulp tasks
 comments: true
 categories: 
@@ -10,7 +10,7 @@ categories:
   - edge
 ---
 
-I use a lot grunt and gulp when working so, to improve my workflow with Visual Studio, I created the GruntLauncher extension which can parse a *gulpfile* or *gruntfile* and extract the contained tasks.
+I use a lot grunt and gulp when working so, to improve my workflow with Visual Studio, I created the GruntLauncher extension which can parse a *gulpfile* or *gruntfile* and extract the contained tasks allowing you to execute them from inside VS.
 
 To be able to do this I didn't have many options so I used an hack: **executing** the file in a javascript engine and reading the option object to identify the tasks.
 
@@ -20,11 +20,11 @@ While this works it has many unhandled corner cases:
 * all the gulp utility functions must be present and defined
 * all the common node functions should be present and defined ( this is almost impossible to do as they are too many)
 
-While this was an hack it worked quite well with just an handful of cases but everytime someone had a problem I got back to thinking to a better  and more robust solution.
+While this was an hack it worked quite well with just an handful of unhandled cases but everytime someone had a problem I got back to thinking to a better  and more robust solution.
 
-The an idea dawned on me: Why should I mock all these functions and not simply ask to grunt and gulp for the defined config options? While this seems easy to do you have to remember that I cannot simply invoke the command line and look at the results as I need the whole options object for postprocessing and also because it's not a perfect solution.
+Then an idea dawned on me: Why should I mock all these functions and not simply ask to grunt and gulp for the defined config options? While this seems easy to do you have to remember that I cannot simply invoke the command line and look at the results as I need the whole options object for postprocessing and also because it's not a perfect solution.
 
-WIth some experiments I came to the following results for gulp:
+WIth some experiments I came to the following node.js code for gulp:
 
     var gulp = require('gulp');
     require('./gulpfile');
@@ -56,9 +56,6 @@ and a similar snippet for grunt (in this case I also look for subtasks)
 	}
 
 
-With these I can let gulp and grunt do the work trusting the files to be well formed and the necessary plugins installed then simply invoke this code from .NET thanks to [Edge.js](https://github.com/tjanczuk/edge).
+With these I can let gulp and grunt do the work, trusting the files to be well formed and the necessary plugins installed, then simply invoke this code from .NET thanks to [Edge.js](https://github.com/tjanczuk/edge).
 
-GruntLauncher is gonna get a seious refactoring..
-
-
-
+GruntLauncher is gonna get a serious refactoring..
