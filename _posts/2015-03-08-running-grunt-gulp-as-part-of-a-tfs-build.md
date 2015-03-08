@@ -16,22 +16,21 @@ Having updated TFS to the 2013 version I've found there's an easier way to do it
 - install grunt/gulp globally on every build agent. Pay attention to the fact that it must be installed as the user that runs the build agent and the grunt/gulp location **must** be included in the PATH variable (else you won't be able to invoke grunt/gulp). 
 - Add a powershell script inside your solution with the following lines
 
+        Push-Location "$PSScriptRoot\..\Source\Web"  
+        Write-Host "npm package restore"
+        & "npm" install
+        if ($LastExitCode -ne 0) {
+          Write-Error "Npm package restore failed";
+          exit 1;
+        }
 
-    Push-Location "$PSScriptRoot\..\Source\Web"  
-    Write-Host "npm package restore"
-    & "npm" install
-    if ($LastExitCode -ne 0) {
-      Write-Error "Npm package restore failed";
-      exit 1;
-    }
-
-    Write-Host "Grunt requirejs"
-    & "grunt" requirejs
-    if ($LastExitCode -ne 0) {
-      Write-Error "Grunt requirejs failed";
-      exit 1;
-    }
-    Pop-Location
+        Write-Host "Grunt requirejs"
+        & "grunt" requirejs
+        if ($LastExitCode -ne 0) {
+          Write-Error "Grunt requirejs failed";
+          exit 1;
+        }
+        Pop-Location
 
 - Modify your build definition to include the script by going in the process Tab -> Build section -> Advanced -> PreBuild script path
 - Run your newly configured build and enjoy.
