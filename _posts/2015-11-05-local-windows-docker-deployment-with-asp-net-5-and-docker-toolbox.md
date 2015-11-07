@@ -32,11 +32,11 @@ and verify your docker installation is working.
 
 The first thing to do is to create a new ASP.NET Web Application with the **ASP.NET Preview Templates**. Choose **Web application** as in the image and uncheck the *host in the cloud* option.
 
-![dockercreate.png]({{site.baseurl}}/images/dockercreate.png)
+![]({{site.baseurl}}/images/dockercreate.png)
 
 Proceed with project creation and then build it by pressing **Ctrl+Shift+B**. To start the deploy simply right-click on the project and select the **Publish** option.
 
-![dockerpublish.png]({{site.baseurl}}/images/dockerpublish.png)
+![]({{site.baseurl}}/images/dockerpublish.png)
 
 Choose the **docker containers** option and then the **Custom Docker host**.
 
@@ -44,11 +44,11 @@ Choose the **docker containers** option and then the **Custom Docker host**.
 
 Now you will have to specify the connection info for your local Docker host
 
-![dockercustom.png]({{site.baseurl}}/images/dockercustom.png)
+![]({{site.baseurl}}/images/dockercustom.png)
 
 To obtain these info launch the **Docker quickstart terminal** installed with the Docker Tools.
 
-![dockerterminal.png]({{site.baseurl}}/images/dockerterminal.png)
+![]({{site.baseurl}}/images/dockerterminal.png)
 
 You will see, drawn in green, the name of your machine and it's IP, in this case 192.168.99.100. Return to the connection info dialog and insert ** tcp://192.168.99.100:2376 **. Then execute in the terminal 
 
@@ -58,8 +58,8 @@ substituting default with your machine name. You will see all the config options
 
 Now you're done. Press **Publish** and wait until the build terminates, the browser will automatically open your website running in Docker.
 
-![dockerrunning.png]({{site.baseurl}}/images/dockerrunning.png)
+![]({{site.baseurl}}/images/dockerrunning.png)
 
-![dockerps.png]({{site.baseurl}}/images/dockerps.png)
+![]({{site.baseurl}}/images/dockerps.png)
 
 
