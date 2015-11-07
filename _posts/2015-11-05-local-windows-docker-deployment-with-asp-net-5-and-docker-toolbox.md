@@ -32,5 +32,6 @@ The first thing to do is to create a new ASP.NET Web Application with the **ASP.
 
 ![dockercreate.png]({{site.baseurl}}/images/dockercreate.png)
 
+Proceed with project creation and then build it.
 
 
