@@ -2,13 +2,11 @@
 layout: post
 comments: true
 published: true
-title: ''
+title: Bazooka 0.3 is ready
 categories:
   - bazooka
   - continuous delivery
 ---
-## Bazooka 0.3 is ready
-
 After more than one year and over five thousand deploys a new release of Bazooka is ready. Grab the new and shiny 0.3 version from [the release page](https://github.com/BazookaDeploy/Bazooka/releases/tag/0.3).
 
 This version is a complete rewrite of the User Interface to make it more appealing and easier to add functionalities to. 
