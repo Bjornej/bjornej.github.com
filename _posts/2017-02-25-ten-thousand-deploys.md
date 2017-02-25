@@ -24,13 +24,13 @@ All these things summed up to many little problems so I started looking for bett
 Last week I was looking at its statistics page and noticed one thing: in less than two years (from June 2015 to February 2017) over thirty developers worked on ninety applications making over ten thousand deploys.
 
 
-![graficoDeploy.png](/images/graficoDeploy.png)
+![Deplyments by month](/images/graficoDeploy.png)
 
 As you can see usage has been steady with an increase during summer months as many of our applications have a usage peak in the summer.
 
 Over 90 applications were published some of which are very active while others are in maintenance mode and experience only a few deploys per year
 
-![grafico2.png](/images/grafico2.png)
+![Deployments by application](/images/grafico2.png)
 
 During these two years many bugs have been fixed and features added but there still are some that could make for an easier deployment experience like release promotion through enviroments but this is an argument for another post
 
