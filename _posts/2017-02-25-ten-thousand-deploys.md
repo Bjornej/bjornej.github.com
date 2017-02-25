@@ -9,8 +9,6 @@ categories:
   - Bazooka
   - automated deploy
 ---
-Less than two years. 
-
 I started developing professionally six years ago and got a job fresh out of university. At the time I didn't know much about all the topics surrounding development: continuous integration, continuous delivery, capacity planning, etc.. .
 
 When I started developing my first application what was taught to me was: verify that it builds and deploy it to a network folder with the Visual Studio *Publish* option. It worked fine as I was working alone but it had numerous problems:
