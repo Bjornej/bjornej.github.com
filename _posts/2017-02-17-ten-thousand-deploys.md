@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-published: true
+published: false
 title: Ten thousand deploys
 categories:
   - continuous integration
