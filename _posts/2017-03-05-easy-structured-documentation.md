@@ -1,17 +1,17 @@
 ---
 layout: post
 comments: true
-published: false
+published: true
 title: Easy structured documentation
 categories:
   - documentation
   - knowledge base
 ---
-One of the classic problems arising when developing is how to create documentation about our software in a way that is easily disccoverable and updatable from every developer. We faced this problem and tried some options on the way before settling on the easiest and most approachable option we can find.
+One of the classic problems arising when developing professionally is how to create documentation about our software in a way that is easily disccoverable and updatable from every developer. We faced this problem and tried some options on the way before settling on the easiest and most approachable option we could find.
 
 #### First solution: Sharepoint
 
-This was the solution implemented when I was hired. It basically boils down to a website where documents can be uploadedd in a folder-like structure with permission to upload, read and modify them. While it worked it had some serious problems:
+This was the solution implemented when I was hired. It basically boils down to a website where documents can be uploaded in a folder-like structure with permission to upload, read and modify them. While it worked it had some serious problems:
 
 - lack of search across documents
 - permissions had  to be requested to an administrator to view documents (this could be avoided by giving read permissions to everyone in truth)
@@ -38,5 +38,9 @@ To reach this objective we used [Metalsmith](http://www.metalsmith.io/) to creat
 
 In this configuration no permissions are needed as every edit is reflected in the source control history and can easily be reverted.
 
-If you want to try it you can download a personalizable skeleton at https://github.com/Bjornej/KnowledgeBase
+If you want to try it you can download a personalizable skeleton at https://github.com/Bjornej/KnowledgeBase. To run it just
 
+    npm install
+    node -harmony build.js
+    
+an your static site will be built.
