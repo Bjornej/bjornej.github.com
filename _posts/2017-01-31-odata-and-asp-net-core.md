@@ -110,6 +110,42 @@ The main problem is that this type by default won't bind to the request as this 
     }
 }
 
+the ODataModelHelper
+
+    public static class ODataModelHelper
+    {
+        private const string ModelKeyPrefix = "MS_EdmModel";
+
+        private static System.Web.Http.HttpConfiguration configuration = new System.Web.Http.HttpConfiguration();
+
+        internal static Microsoft.Data.Edm.IEdmModel GetEdmModel(this ActionDescriptor actionDescriptor, Type entityClrType)
+        {
+            if (actionDescriptor == null)
+            {
+                throw new ArgumentNullException("actionDescriptor");
+            }
+
+            if (entityClrType == null)
+            {
+                throw new ArgumentNullException("entityClrType");
+            }
+
+            if (actionDescriptor.Properties.ContainsKey(ModelKeyPrefix + entityClrType.FullName))
+            {
+                return actionDescriptor.Properties[ModelKeyPrefix + entityClrType.FullName] as Microsoft.Data.Edm.IEdmModel;
+            }
+            else
+            {
+                ODataConventionModelBuilder builder = new ODataConventionModelBuilder(ODataModelHelper.configuration, isQueryCompositionMode: true);
+                EntityTypeConfiguration entityTypeConfiguration = builder.AddEntity(entityClrType);
+                builder.AddEntitySet(entityClrType.Name, entityTypeConfiguration);
+                Microsoft.Data.Edm.IEdmModel edmModel = builder.GetEdmModel();
+                actionDescriptor.Properties[ModelKeyPrefix + entityClrType.FullName] = edmModel;
+                return edmModel;
+
+            }
+        }
+    }
 
 the IModelBinderProvider
 
@@ -132,4 +168,3 @@ and finally register it  in the **ConfigureServices** method
 	var mvc = services.AddMvc(options =>{
     	options.ModelBinderProviders.Insert(0, new ODataModelBinderProvider());
     });
-
