@@ -29,11 +29,11 @@ Telegraf can be easily installed as a Windows Service and most importantly:
 
 ### Data storage
 
-The second choice to make regarded the storage layer. While using Telegraf allows a great degree of flexibility we had to choose a solution with a good Windows support, low hardware requirements and able to be queried by the toosl we chose for data visualization and alerting.
+The second choice to make regarded the storage layer. While using Telegraf allows a great degree of flexibility we had to choose a solution with a good Windows support, low hardware requirements and able to be queried by the tools we chose for data visualization and alerting.
 
-The choice was simple, we choose [InfluxDb](https://www.influxdata.com/time-series-platform/influxdb/) which can be installed as a WIndows service, has low requirements and integrates well with the other tools in the stack.
+The choice was simple, we chose [InfluxDb](https://www.influxdata.com/time-series-platform/influxdb/) which can be installed as a WIndows service, has low requirements and integrates well with the other tools in the stack.
 
-Notably it has also a concept of data retention allowing you to specify an automatic cleanup of your data  after 30 days.
+Notably it has also a concept of data retention allowing you to specify an automatic cleanup of your data after 30 days.
 
 ### Data visualization
 
@@ -44,3 +44,11 @@ To visualize the collected data we chose to use [Grafana](https://grafana.com/) 
 Initially we tried to use for this part Grafana new support for alerts but we soon realized it was too limited to work well (no multiple levels, no different alerting rules, ...) so we switched later to [Bosun](https://bosun.org/), a monitoring and alerting tool created by Stack Exchange. This tool can easily query InfluxDb, allows you to define complex rules and tweak them over time.
 
 Also it has a dashboard with all active alerts where you can handle them byacknowledging them or closing when solved.
+
+### Reamrks
+
+While this solution has proved to work well, other combinations are possible.
+
+- swapping Grafana and Bosun for Chronograf and Kapacitor (produced by the same developers as InfluxDb and telegraf)
+- using Prometheus as data storage
+- using ElastiCsearch as storage, Kibana for visualization and Watcher for alerting
