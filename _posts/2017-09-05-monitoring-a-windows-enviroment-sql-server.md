@@ -38,13 +38,13 @@ To make it simple we can craft a configuration which includes only the most rele
 Now to the SQL Server- specific Performance counters (replace **INSTANCE** with the name of your instance, there can be more than one on a single server):
 
 - **MSSQL$INSTANCE:Buffer Manager** : 
- - "Buffer cache hit ratio"
- - "Database Pages"
- - "Free list stalls/sec"
- - "Page life expectancy"
- - "Page lookups/sec"
- - "Page reads/sec"
- - "Page writes/sec" 
+  - "Buffer cache hit ratio"
+  - "Database Pages"
+  - "Free list stalls/sec"
+  - "Page life expectancy"
+  - "Page lookups/sec"
+  - "Page reads/sec"
+  - "Page writes/sec" 
 - **MSSQL$INSTANCE:Databases**: 
   - "Active transactions"
   - "Transactions/sec"
