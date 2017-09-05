@@ -20,19 +20,74 @@ Telegraf already has a plugin for sql server that will extract information for y
 To make it simple we can craft a configuration which includes only the most relevant and important counters. As in the case of an application server you will need the same base data:
 
 -  use the **disk**, **cpu** and **mem** plugins
--  **Network Interface** : "Bytes Received/sec", "Bytes Sent/sec", "Bytes Total/sec"
-- **Processor**: "% Idle Time", "% Interrupt Time", "% Privileged Time", "% User Time", "% Processor Time"
-- **LogicalDisk** : “Disk Bytes/sec”, “Disk Read Bytes/sec”, “Disk Write Bytes/sec” (all istances except _Total)
+-  **Network Interface** : 
+  - "Bytes Received/sec" 
+  - "Bytes Sent/sec"
+  - "Bytes Total/sec"
+- **Processor**: 
+  - "% Idle Time"
+  - "% Interrupt Time"
+  - "% Privileged Time"
+  - "% User Time"
+  - "% Processor Time"
+- **LogicalDisk** : 
+  - “Disk Bytes/sec”
+  - “Disk Read Bytes/sec”
+  - “Disk Write Bytes/sec” (all istances except _Total)
 
 Now to the SQL Server- specific Performance counters (replace **INSTANCE** with the name of your instance, there can be more than one on a single server):
 
-- **MSSQL$INSTANCE:Buffer Manager** : "Buffer cache hit ratio", "Database Pages", "Free list stalls/sec", "Page life expectancy", "Page lookups/sec", "Page reads/sec", "Page writes/sec" 
-- **MSSQL$INSTANCE:Databases**: "Active transactions", "Transactions/sec", "Write transactions/sec" 
-- **MSSQL$INSTANCE:General Statistics**: "Processes blocked"
-- **MSSQL$INSTANCE:Latches**: "Average Latch Wait Time (ms)", "Latch Waits/sec", "Total Latch Wait Time (ms)" 
-- **MSSQL$INSTANCE:Locks**: "Average wait time (ms)", "Lock Requests/sec", "Timeout blocchi (timeout > 0)/sec", "Lock Timeouts/sec", "Lock Wait Time (ms)", "Lock Waits/sec", "Number of Deadlocks/sec" 
-- **MSSQL$INSTANCE:SQL Statistics**: "Batch Requests/sec", "SQL Compilations/sec", "SQL Re-Compilations/sec" 
-- **MSSQL$INSTANCE:Transactions**: "Free Space in tempdb (KB)", "Transactions", "Version Cleanup rate (KB/s)", "Version Generation rate (KB/s)", "Version Store Size (KB)", "Version Store unit count", "Version Store unit creation", "Version Store unit truncation" 
-- **MSSQL$INSTANCE:Wait Statistics**: "Lock waits", "Log buffer waits", "Log write waits", "Memory grant queue waits", "Network IO waits", "Non-Page latch waits", "Page IO latch waits", "Page latch waits", "Thread-safe memory objects waits" , "Transaction ownership waits", "Wait for the worker","Workspace synchronization waits"
+- **MSSQL$INSTANCE:Buffer Manager** : 
+ - "Buffer cache hit ratio"
+ - "Database Pages"
+ - "Free list stalls/sec"
+ - "Page life expectancy"
+ - "Page lookups/sec"
+ - "Page reads/sec"
+ - "Page writes/sec" 
+- **MSSQL$INSTANCE:Databases**: 
+  - "Active transactions"
+  - "Transactions/sec"
+  - "Write transactions/sec" 
+- **MSSQL$INSTANCE:General Statistics**: 
+  - "Processes blocked"
+- **MSSQL$INSTANCE:Latches**: 
+  - "Average Latch Wait Time (ms)"
+  - "Latch Waits/sec"
+  - "Total Latch Wait Time (ms)" 
+- **MSSQL$INSTANCE:Locks**: 
+  - "Average wait time (ms)"
+  - "Lock Requests/sec"
+  - "Timeout locks (timeout > 0)/sec"
+  - "Lock Timeouts/sec"
+  - "Lock Wait Time (ms)"
+  - "Lock Waits/sec"
+  - "Number of Deadlocks/sec" 
+- **MSSQL$INSTANCE:SQL Statistics**: 
+  - "Batch Requests/sec"
+  - "SQL Compilations/sec"
+  - "SQL Re-Compilations/sec" 
+- **MSSQL$INSTANCE:Transactions**: 
+  - "Free Space in tempdb (KB)"
+  - "Transactions"
+  - "Version Cleanup rate (KB/s)"
+  - "Version Generation rate (KB/s)"
+  - "Version Store Size (KB)"
+  - "Version Store unit count"
+  - "Version Store unit creation"
+  - "Version Store unit truncation" 
+- **MSSQL$INSTANCE:Wait Statistics**: 
+  - "Lock waits"
+  - "Log buffer waits"
+  - "Log write waits"
+  - "Memory grant queue waits"
+  - "Network IO waits"
+  - "Non-Page latch waits"
+  - "Page IO latch waits"
+  - "Page latch waits"
+  - "Thread-safe memory objects waits"
+  - "Transaction ownership waits"
+  - "Wait for the worker"
+  - "Workspace synchronization waits"
 
 These performance counters will give you a pretty complete view of your SQL Server behaviour allowing you to inspect and correlate performance problems in your applications with the state of your database.
